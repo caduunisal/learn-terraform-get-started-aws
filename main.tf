@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region  = "us-east-1"
   profile = "admin"
 }
 
@@ -7,7 +7,7 @@ data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
-    name = "name"
+    name   = "name"
     values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"]
   }
 

@@ -80,6 +80,10 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
+    # Destroy the existing infrastructure to avoid conflicts
+    - name: Terraform Destroy (limpeza opcional)
+      run: terraform destroy -auto-approve
+
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
@@ -91,10 +95,6 @@ jobs:
     # Delete old key pair if it exists
     - name: Delete Old Key Pair
       run: aws ec2 delete-key-pair --key-name aws-ec2-key
-
-    # Destroy the existing infrastructure to avoid conflicts
-    - name: Terraform Destroy (limpeza opcional)
-      run: terraform destroy -auto-approve
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks

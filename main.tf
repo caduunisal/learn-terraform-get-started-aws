@@ -1,6 +1,6 @@
 provider "aws" {
   region  = "us-east-1"
-  # profile = "admin"
+  profile = "admin"
 }
 
 data "aws_ami" "ubuntu" {

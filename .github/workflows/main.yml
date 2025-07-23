@@ -81,8 +81,8 @@ jobs:
       run: terraform init
 
     # Destroy the existing infrastructure to avoid conflicts
-    - name: Terraform Destroy (limpeza opcional)
-      run: terraform destroy -auto-approve
+    #- name: Terraform Destroy (limpeza opcional)
+    #  run: terraform destroy -auto-approve
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format

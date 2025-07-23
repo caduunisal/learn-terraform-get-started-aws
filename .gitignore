@@ -1,4 +1,6 @@
 .terraform/
 bfg-1.14.0.jar
 aws-ec2-key
+aws-ec2-key.pem
 aws-ec2-key.pub
+

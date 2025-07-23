@@ -14,10 +14,10 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_key_pair" "deployer" {
-  key_name   = "aws-ec2-key"
-  public_key = file("${path.module}/aws-ec2-key.pub")
-}
+#resource "aws_key_pair" "deployer" {
+#  key_name   = "aws-ec2-key"
+#  public_key = file("${path.module}/aws-ec2-key.pub")
+#}
 
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
